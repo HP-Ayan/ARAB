@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.gallery-container {
+  perspective: 1200px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+}
+
+.carousel {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+/* Images - original canvas layout */
+.carousel img {
+  position: absolute;
+  width: 250px;
+  height: 350px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  transition: opacity 0.4s ease, box-shadow 0.4s ease, border 0.3s ease;
+}
+
+/* Transparent except the back image */
+.carousel img.transparent-front {
+  opacity: 0;
+  border: 2px solid #fff;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+}
+
+/* 🔁 Responsive for mobile */
+@media (max-width: 600px) {
+  .carousel {
+    width: 240px;
+    height: 320px;
+  }
+
+  .carousel img {
+    width: 200px;
+    height: 280px;
+  }
+}
+
+/* Optional: Smaller phones */
+@media (max-width: 400px) {
+  .carousel {
+    width: 200px;
+    height: 270px;
+  }
+
+  .carousel img {
+    width: 170px;
+    height: 240px;
+  }
+}
+
+

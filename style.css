@@ -1,0 +1,109 @@
+:root {
+  --color1: #fe5b91;
+  --color2: #5e47f0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', cursive, sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, var(--color1), var(--color2));
+  background-size: 400% 400%;
+  animation: backgroundGradient 10s ease infinite;
+  transition: background 1s ease;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  color: #333;
+  max-width: 90%;
+}
+
+.card h1 {
+  font-size: 2.5rem;
+  color: #e91e63;
+}
+
+.card p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+button {
+  background: linear-gradient(to right, #ff5f6d, #ffc371);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+  width: 100%;
+}
+
+.hearts-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes backgroundGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .card h1 {
+    font-size: 2rem;
+  }
+
+  .card p {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
